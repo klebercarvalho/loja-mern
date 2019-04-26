@@ -1,6 +1,6 @@
-# Loja
+# loja-api
 
-App criado com [Create React App](https://github.com/facebook/create-react-app).
+App criado com [Express](https://expressjs.com) e [Node.js](https://nodejs.org).
 
 Para instalar as dependências, execute o comando abaixo:
 
@@ -8,4 +8,4 @@ Para instalar as dependências, execute o comando abaixo:
 
 Para executar o app, execute o comando:
 
-### `npm start`
+### `node app.js`
