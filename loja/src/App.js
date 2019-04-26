@@ -32,9 +32,9 @@ class App extends Component {
     const nome = evento.target.name;
     const valor = evento.target.value;
 
-    let produto = {...this.state.produto};
+    let produto = { ...this.state.produto };
     produto[nome] = valor;
-    this.setState({produto});
+    this.setState({ produto });
   }
 
   salvar(evento) {
@@ -47,7 +47,7 @@ class App extends Component {
           descricao: '',
           categoria: 'Eletrônicos'
         };
-        this.setState({produto});
+        this.setState({ produto });
         this.recuperarProdutos();
       });
   }
@@ -61,18 +61,18 @@ class App extends Component {
   recuperarProdutos() {
     axios
       .get(this.urlAPI)
-      .then(resposta => this.setState({produtos: resposta.data}));
+      .then(resposta => this.setState({ produtos: resposta.data }));
   }
 
   render() {
     const listaProdutos = this.state.produtos.map(
       produto => {
-        return(
+        return (
           <tr key={produto._id}>
             <td>{produto.descricao}</td>
             <td>{produto.categoria}</td>
             <td>
-              <button onClick={() =>this.remover(produto._id)}><img src={lixeira} alt="Remover"/></button>
+              <button onClick={() => this.remover(produto._id)}><img src={lixeira} alt="Remover" /></button>
             </td>
           </tr>
         );
@@ -92,18 +92,18 @@ class App extends Component {
             <form onSubmit={this.salvar}>
               <div className="grupoFormulario">
                 <label htmlFor="descricao">Descrição</label>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   value={this.state.produto.descricao}
-                  id="descricao" 
-                  name="descricao" 
-                  onChange={this.aoAlterarValorDoCampo} 
+                  id="descricao"
+                  name="descricao"
+                  onChange={this.aoAlterarValorDoCampo}
                   required />
               </div>
               <div className="grupoFormulario">
                 <label htmlFor="categoria">Categoria</label>
-                <select 
-                  name="categoria" 
+                <select
+                  name="categoria"
                   id="categoria"
                   value={this.state.produto.categoria}
                   onChange={this.aoAlterarValorDoCampo} >
@@ -117,20 +117,24 @@ class App extends Component {
             </form>
           </div>
 
-          <div id="listagemProdutos">
-            <table>
-              <thead>
-                <tr>
-                  <th>Descrição</th>
-                  <th>Categoria</th>
-                  <th>Ação</th>
-                </tr>
-              </thead>
-              <tbody>
-                {listaProdutos}
-              </tbody>
-            </table>
-          </div>
+          {
+            this.state.produtos.length > 0 &&
+            <div id="listagemProdutos">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Ação</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {listaProdutos}
+                </tbody>
+              </table>
+            </div>
+          }
+
         </div>
       </div>
     );
