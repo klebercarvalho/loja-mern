@@ -1,0 +1,83 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#banner {
+  background-color: #81cfe0;
+  color: white;
+  padding: 5px 0px 5px 10px;
+  margin-bottom: 10px;
+}
+
+#conteiner {
+  padding: 10px;
+}
+
+#formulario, #listagemProdutos {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #cccccc;
+  margin-bottom: 10px;
+}
+
+.grupoFormulario label, .grupoFormulario input {
+  display: block;
+  padding-bottom: 5px;
+}
+
+.grupoFormulario input[type=text], .grupoFormulario select {
+  border-radius: 5px;
+  border: 2px solid #cccccc;
+  padding: 5px;
+  width: 25%;
+}
+
+.grupoFormulario {
+  margin-bottom: 10px;
+}
+
+#botaoSalvar {
+  background-color: #1e8bc3;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 105%;
+}
+
+#listagemProdutos table {
+  text-align: left;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#listagemProdutos th, #listagemProdutos td {
+  padding: 10px 20px 10px 0px;
+  margin: 0px;
+}
+
+#listagemProdutos tbody tr:nth-child(odd) {
+  background-color: #eeeeee;
+}
+
+#listagemProdutos button {
+  border: none;
+  background-color: Transparent;
+}
+
+#listagemProdutos button:hover {
+  background-color: #dddddd;
+}
+
+@media only screen and (max-width: 600px) {
+  .grupoFormulario input[type=text], .grupoFormulario select {
+    width: 90%;
+  }
+
+  #listagemProdutos table {
+    width: 100%;
+  }
+}
+
+
+
