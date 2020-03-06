@@ -34,4 +34,4 @@ Para executar o app, execute o comando:
 
 ### `npm start`
 
-O client vai subir pa porta 3000
+O cliente vai subir pa porta 3000
