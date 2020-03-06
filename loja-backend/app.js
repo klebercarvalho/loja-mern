@@ -23,5 +23,5 @@ app.use(bodyParser.json());
 
 app.use('/produtos', rotasProdutos);
 
-const porta = 3000;
+const porta = 4000;
 app.listen(porta, () => console.log(`App rodando na porta ${porta}`));

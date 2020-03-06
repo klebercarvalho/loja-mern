@@ -17,7 +17,7 @@ class App extends Component {
       produtos: []
     };
 
-    this.urlAPI = 'http://localhost:3000/produtos';
+    this.urlAPI = 'http://localhost:4000/produtos';
     this.aoAlterarValorDoCampo = this.aoAlterarValorDoCampo.bind(this);
     this.recuperarProdutos = this.recuperarProdutos.bind(this);
     this.salvar = this.salvar.bind(this);
